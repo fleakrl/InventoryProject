@@ -11,7 +11,7 @@ import java.util.List;
 public class BookController {
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Book> createBook() {
+    public List<Book> listBooks() {
         return Lists.newArrayList(
                 Book.builder()
                         .title("Harry Potter")
