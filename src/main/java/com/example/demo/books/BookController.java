@@ -1,0 +1,32 @@
+package com.example.demo.books;
+
+import com.google.common.collect.Lists;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController("/books")
+public class BookController {
+
+    @RequestMapping(method = RequestMethod.GET)
+    public List<Book> createBook() {
+        return Lists.newArrayList(
+                Book.builder()
+                        .title("Harry Potter")
+                        .author("JK Rowling")
+                        .publisher("Scholastic")
+                        .yearPublished(2000)
+                        .ISBN("12")
+                        .bookId(12345l)
+                        .build(),
+                Book.builder()
+                        .title("A Local Habitation")
+                        .author("Seanan McGuire")
+                        .build()
+        );
+
+    }
+
+}
