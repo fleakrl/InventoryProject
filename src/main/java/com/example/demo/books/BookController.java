@@ -19,11 +19,13 @@ public class BookController {
                         .publisher("Scholastic")
                         .yearPublished(2000)
                         .ISBN("12")
-                        .bookId(12345l)
                         .build(),
                 Book.builder()
                         .title("A Local Habitation")
                         .author("Seanan McGuire")
+                        .publisher("Daw Books")
+                        .yearPublished(12)
+                        .ISBN("123")
                         .build()
         );
 
