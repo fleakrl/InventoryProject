@@ -1,8 +1,6 @@
 package com.example.demo.books;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -10,8 +8,10 @@ import javax.validation.constraints.NotNull;
 @Data
 @Entity
 @Builder
-@Table(name = "books")
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = false, of = {"ISBN"})
+@Table(schema ="lc_portfolio_project", name = "books")
 public class Book {
 
     @Id
