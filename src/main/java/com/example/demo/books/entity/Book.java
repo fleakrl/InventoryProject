@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = false, of = {"ISBN"})
+@EqualsAndHashCode(callSuper = false, of = {"isbn"})
 @Table(schema ="lc_portfolio_project", name = "books")
 public class Book {
 
@@ -37,6 +37,6 @@ public class Book {
 
     @NotNull
     @Column(name = "isbn", unique = true)
-    private String ISBN;
+    private String isbn;
 
 }
