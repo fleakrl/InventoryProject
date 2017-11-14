@@ -1,6 +1,6 @@
 package com.example.demo.books.delegate;
 
-import com.example.demo.books.entity.Book;
+import com.example.demo.books.booksdto.BookDto;
 
 import java.util.List;
 
@@ -9,5 +9,7 @@ public interface BooksDelegate {
      *
      * @return List of all books
      */
-    List<Book> getAllBooks();
+    List<BookDto> getAllBooks();
+
+
 }

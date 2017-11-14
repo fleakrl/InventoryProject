@@ -1,7 +1,7 @@
 package com.example.demo.books.controller;
 
+import com.example.demo.books.booksdto.BookDto;
 import com.example.demo.books.delegate.BooksDelegate;
-import com.example.demo.books.entity.Book;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +17,7 @@ public class BookController {
     private final BooksDelegate booksDelegate;
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Book> listBooks() {
+    public List<BookDto> listBooks() {
         return booksDelegate.getAllBooks();
 
     }

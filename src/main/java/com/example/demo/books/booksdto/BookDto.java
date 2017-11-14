@@ -1,21 +1,30 @@
 package com.example.demo.books.booksdto;
 
 import com.example.demo.books.entity.Book;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
+import lombok.Data;
 
+@Data
 @Builder
 public class BookDto {
 
+    @JsonProperty
     private Integer bookId;
 
+    @JsonProperty
     private String title;
 
+    @JsonProperty
     private String author;
 
+    @JsonProperty
     private String publisher;
 
+    @JsonProperty
     private int yearPublished;
 
+    @JsonProperty
     private String isbn;
 
     /**
