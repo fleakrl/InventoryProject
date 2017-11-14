@@ -1,5 +1,7 @@
-package com.example.demo.books;
+package com.example.demo.books.controller;
 
+import com.example.demo.books.entity.Book;
+import com.example.demo.books.repository.BookRepository;
 import com.google.common.collect.Lists;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

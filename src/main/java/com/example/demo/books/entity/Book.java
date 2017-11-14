@@ -1,4 +1,4 @@
-package com.example.demo.books;
+package com.example.demo.books.entity;
 
 import lombok.*;
 
