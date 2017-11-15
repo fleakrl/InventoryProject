@@ -10,12 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Handles requests to /books
+ */
 @RestController("/books")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class BookController {
 
     private final BooksDelegate booksDelegate;
 
+
+    /**
+     *  On the GET request for /books return a list of all books in the database
+     * @return Returns a list of all books in the database
+     */
     @RequestMapping(method = RequestMethod.GET)
     public List<BookDto> listBooks() {
         return booksDelegate.getAllBooks();

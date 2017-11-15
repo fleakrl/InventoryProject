@@ -9,6 +9,10 @@ import java.util.List;
 
 @Repository
 public interface BookRepository extends CrudRepository<Book, Integer> {
+    /**
+     *
+     * @return List of all books in database
+     */
     List<Book> findAll();
 
 }
