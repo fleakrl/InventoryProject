@@ -29,4 +29,9 @@ public class BooksDelegateImpl implements BooksDelegate {
         Book book = BookDto.convertBookDtoToBook(bookToAdd);
         return BookDto.convertBooktoDto(booksService.addBook(book));
     }
+
+    @Override
+    public void deleteBook(Integer bookId) {
+        booksService.deleteBook(bookId);
+    }
 }

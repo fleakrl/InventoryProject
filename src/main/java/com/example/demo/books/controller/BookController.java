@@ -4,10 +4,7 @@ import com.example.demo.books.booksdto.BookDto;
 import com.example.demo.books.delegate.BooksDelegate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,6 +32,11 @@ public class BookController {
     @RequestMapping(method = RequestMethod.POST)
     public BookDto addBook(@RequestBody BookDto bookToAdd){
         return booksDelegate.addBook(bookToAdd);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, path = "/books/{bookId}")
+    public void deleteBook(@PathVariable Integer bookId){
+        booksDelegate.deleteBook(bookId);
     }
 
 }

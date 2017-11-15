@@ -13,4 +13,6 @@ public interface BooksService {
     List<Book> getAllBooks();
 
     Book addBook(Book bookToAdd);
+
+    void deleteBook(Integer bookId);
 }

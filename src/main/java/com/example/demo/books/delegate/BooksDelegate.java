@@ -13,5 +13,7 @@ public interface BooksDelegate {
 
     BookDto addBook(BookDto bookToAdd);
 
+    void deleteBook(Integer bookId);
+
 
 }
