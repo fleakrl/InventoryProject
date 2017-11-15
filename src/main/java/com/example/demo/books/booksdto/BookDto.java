@@ -5,25 +5,33 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;
 
+import javax.validation.constraints.NotNull;
+
 @Data
 @Builder
 public class BookDto {
 
+    @NotNull
     @JsonProperty
     private Integer bookId;
 
+    @NotNull
     @JsonProperty
     private String title;
 
+    @NotNull
     @JsonProperty
     private String author;
 
+    @NotNull
     @JsonProperty
     private String publisher;
 
+    @NotNull
     @JsonProperty
     private int yearPublished;
 
+    @NotNull
     @JsonProperty
     private String isbn;
 
@@ -45,6 +53,23 @@ public class BookDto {
                 .build();
 
 
+    }
+
+    /**
+     *
+     * Converts a BookDto object into a Book object
+     * @param bookDto the bookDto object to be transformed by this function
+     * @return Book A book object constructed from the input bookDto
+     */
+    public static Book convertBookDtoToBook(BookDto bookDto){
+        return Book.builder()
+                .bookId(bookDto.getBookId())
+                .title(bookDto.getTitle())
+                .author(bookDto.getAuthor())
+                .publisher(bookDto.getPublisher())
+                .yearPublished(bookDto.getYearPublished())
+                .isbn(bookDto.getIsbn())
+                .build();
     }
 
 }
