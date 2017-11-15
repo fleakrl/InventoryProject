@@ -4,6 +4,7 @@ import com.example.demo.books.booksdto.BookDto;
 import com.example.demo.books.delegate.BooksDelegate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +29,12 @@ public class BookController {
     public List<BookDto> listBooks() {
         return booksDelegate.getAllBooks();
 
+    }
+
+
+    @RequestMapping(method = RequestMethod.POST)
+    public BookDto addBook(@RequestBody BookDto bookToAdd){
+        return booksDelegate.addBook(bookToAdd);
     }
 
 }

@@ -11,4 +11,6 @@ public interface BooksService {
      * @return List of all Books in the database
      */
     List<Book> getAllBooks();
+
+    Book addBook(Book bookToAdd);
 }

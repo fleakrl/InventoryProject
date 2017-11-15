@@ -1,6 +1,7 @@
 package com.example.demo.books.delegate;
 
 import com.example.demo.books.booksdto.BookDto;
+import com.example.demo.books.entity.Book;
 import com.example.demo.books.service.BooksService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,9 @@ public class BooksDelegateImpl implements BooksDelegate {
                 .collect(Collectors.toList());
     }
 
-
+    @Override
+    public BookDto addBook(BookDto bookToAdd) {
+        Book book = BookDto.convertBookDtoToBook(bookToAdd);
+        return BookDto.convertBooktoDto(booksService.addBook(book));
+    }
 }

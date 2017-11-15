@@ -11,7 +11,7 @@ public interface BooksDelegate {
      */
     List<BookDto> getAllBooks();
 
-
+    BookDto addBook(BookDto bookToAdd);
 
 
 }
