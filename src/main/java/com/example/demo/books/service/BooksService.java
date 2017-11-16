@@ -15,4 +15,6 @@ public interface BooksService {
     Book addBook(Book bookToAdd);
 
     void deleteBook(Integer bookId);
+
+    Book editBook(Book bookToEdit);
 }

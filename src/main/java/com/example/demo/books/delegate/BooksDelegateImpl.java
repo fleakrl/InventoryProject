@@ -34,4 +34,10 @@ public class BooksDelegateImpl implements BooksDelegate {
     public void deleteBook(Integer bookId) {
         booksService.deleteBook(bookId);
     }
+
+    @Override
+    public BookDto editBook(BookDto bookToEdit) {
+        Book book = BookDto.convertBookDtoToBook(bookToEdit);
+        return BookDto.convertBooktoDto(booksService.editBook(book));
+    }
 }

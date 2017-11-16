@@ -15,5 +15,7 @@ public interface BooksDelegate {
 
     void deleteBook(Integer bookId);
 
+    BookDto editBook(BookDto bookToEdit);
+
 
 }

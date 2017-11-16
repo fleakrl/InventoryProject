@@ -28,4 +28,20 @@ public class BooksServiceImpl implements BooksService {
     public void deleteBook(Integer bookId) {
         bookRepository.delete(bookId);
     }
+
+    @Override
+    public Book editBook(Book bookToEdit) {
+
+        //Check to see if book id is in repository
+        Book one = bookRepository.findOne(bookToEdit.getBookId());
+
+        //if not throw exception
+        if(one == null){
+            throw new RuntimeException("Book not found with ID: "+bookToEdit.getBookId());
+        }
+
+        //if book id is in database save book updates
+        return bookRepository.save(bookToEdit);
+
+    }
 }
