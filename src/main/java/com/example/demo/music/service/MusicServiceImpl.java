@@ -23,4 +23,10 @@ public class MusicServiceImpl implements MusicService{
     public Music addMusic(Music musicToAdd) {
         return musicRepository.save(musicToAdd);
     }
+
+    @Override
+    public void deleteMusic(Integer musicId) {
+        musicRepository.delete(musicId);
+
+    }
 }

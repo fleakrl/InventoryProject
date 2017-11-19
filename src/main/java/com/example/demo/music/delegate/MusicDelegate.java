@@ -9,4 +9,6 @@ public interface MusicDelegate {
     List<MusicDto> findAllMusic();
 
     MusicDto addMusic(MusicDto musicToAdd);
+
+    void deleteMusic(Integer musicId);
 }

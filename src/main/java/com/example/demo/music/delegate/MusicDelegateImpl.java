@@ -29,4 +29,9 @@ public class MusicDelegateImpl implements MusicDelegate{
         Music addedMusic = musicService.addMusic(MusicDto.convertDtoToMusic(musicToAdd));
         return MusicDto.convertMusicToDto(addedMusic);
     }
+
+    @Override
+    public void deleteMusic(Integer musicId) {
+        musicService.deleteMusic(musicId);
+    }
 }

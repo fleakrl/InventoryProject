@@ -12,4 +12,6 @@ public interface MusicService {
     List<Music> findAllMusic();
 
     Music addMusic(Music musicToAdd);
+
+    void deleteMusic(Integer musicId);
 }
