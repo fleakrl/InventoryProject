@@ -18,4 +18,9 @@ public class MusicServiceImpl implements MusicService{
     public List<Music> findAllMusic() {
         return musicRepository.findAll();
     }
+
+    @Override
+    public Music addMusic(Music musicToAdd) {
+        return musicRepository.save(musicToAdd);
+    }
 }

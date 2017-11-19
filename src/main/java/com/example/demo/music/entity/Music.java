@@ -43,4 +43,9 @@ public class Music {
 
     @Column(name = "genre")
     private String genre;
+
+    @NotNull
+    @Column(name = "media_format")
+    private String mediaFormat;
+
 }

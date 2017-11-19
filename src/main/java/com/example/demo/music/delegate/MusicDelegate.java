@@ -7,4 +7,6 @@ import java.util.List;
 public interface MusicDelegate {
 
     List<MusicDto> findAllMusic();
+
+    MusicDto addMusic(MusicDto musicToAdd);
 }

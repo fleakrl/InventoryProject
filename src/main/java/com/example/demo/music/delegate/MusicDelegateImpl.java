@@ -1,5 +1,6 @@
 package com.example.demo.music.delegate;
 
+import com.example.demo.music.entity.Music;
 import com.example.demo.music.musicdto.MusicDto;
 import com.example.demo.music.service.MusicService;
 import lombok.RequiredArgsConstructor;
@@ -21,5 +22,11 @@ public class MusicDelegateImpl implements MusicDelegate{
         return musicService.findAllMusic().stream()
                 .map(MusicDto::convertMusicToDto)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public MusicDto addMusic(MusicDto musicToAdd) {
+        Music addedMusic = musicService.addMusic(MusicDto.convertDtoToMusic(musicToAdd));
+        return MusicDto.convertMusicToDto(addedMusic);
     }
 }

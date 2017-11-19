@@ -38,6 +38,9 @@ public class MusicDto {
     @JsonProperty
     private String genre;
 
+    @NotNull
+    private String mediaFormat;
+
 
     /**
      *
@@ -56,6 +59,7 @@ public class MusicDto {
                 .yearPublished(musicDto.getYearPublished())
                 .recordLabel(musicDto.getRecordLabel())
                 .genre(musicDto.getGenre())
+                .mediaFormat(musicDto.getMediaFormat())
                 .build();
     }
 
@@ -76,6 +80,7 @@ public class MusicDto {
                 .yearPublished(music.getYearPublished())
                 .recordLabel(music.getRecordLabel())
                 .genre(music.getGenre())
+                .mediaFormat(music.getMediaFormat())
                 .build();
     }
 }

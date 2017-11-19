@@ -10,4 +10,6 @@ public interface MusicService {
      * @return list of all music in the music table of the database
      */
     List<Music> findAllMusic();
+
+    Music addMusic(Music musicToAdd);
 }

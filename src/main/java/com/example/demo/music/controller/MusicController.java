@@ -4,6 +4,7 @@ import com.example.demo.music.delegate.MusicDelegate;
 import com.example.demo.music.musicdto.MusicDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,5 +30,10 @@ public class MusicController {
     @RequestMapping(method = RequestMethod.GET, path = "/music")
     public List<MusicDto> findAllMusic(){
         return musicDelegate.findAllMusic();
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/music")
+    public MusicDto addMusic(@RequestBody MusicDto musicToAdd){
+        return musicDelegate.addMusic(musicToAdd);
     }
 }
