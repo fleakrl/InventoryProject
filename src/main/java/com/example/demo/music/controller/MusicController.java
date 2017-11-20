@@ -26,6 +26,7 @@ public class MusicController {
      */
     @RequestMapping(method = RequestMethod.GET, path = "/music")
     public List<MusicDto> findAllMusic() {
+
         return musicDelegate.findAllMusic();
     }
 
@@ -38,6 +39,7 @@ public class MusicController {
      */
     @RequestMapping(method = RequestMethod.POST, path = "/music")
     public MusicDto addMusic(@RequestBody MusicDto musicToAdd) {
+
         return musicDelegate.addMusic(musicToAdd);
     }
 
@@ -50,6 +52,7 @@ public class MusicController {
      */
     @RequestMapping(method = RequestMethod.DELETE, path = "/music/{musicId}")
     public void deleteMusic(@PathVariable Integer musicId) {
+
         musicDelegate.deleteMusic(musicId);
     }
 

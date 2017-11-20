@@ -25,8 +25,8 @@ public class BookController {
      */
     @RequestMapping(method = RequestMethod.GET)
     public List<BookDto> listBooks() {
-        return booksDelegate.getAllBooks();
 
+        return booksDelegate.getAllBooks();
     }
 
     /**
@@ -37,16 +37,19 @@ public class BookController {
      */
     @RequestMapping(method = RequestMethod.POST)
     public BookDto addBook(@RequestBody BookDto bookToAdd) {
+
         return booksDelegate.addBook(bookToAdd);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, path = "/books/{bookId}")
     public void deleteBook(@PathVariable Integer bookId) {
+
         booksDelegate.deleteBook(bookId);
     }
 
     @RequestMapping(method = RequestMethod.PUT, path = "/books")
     public BookDto editBook(@RequestBody BookDto bookToEdit) {
+
         return booksDelegate.editBook(bookToEdit);
     }
 
