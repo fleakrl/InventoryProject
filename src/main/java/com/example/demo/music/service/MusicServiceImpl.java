@@ -10,7 +10,7 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class MusicServiceImpl implements MusicService{
+public class MusicServiceImpl implements MusicService {
 
     private final MusicRepository musicRepository;
 
@@ -27,6 +27,18 @@ public class MusicServiceImpl implements MusicService{
     @Override
     public void deleteMusic(Integer musicId) {
         musicRepository.delete(musicId);
+    }
 
+    @Override
+    public Music editMusic(Music musicToEdit) {
+        //Check to see if music is in music table
+        Music one = musicRepository.findOne(musicToEdit.getMusicId());
+
+        //If music to edit ID is not in database throw exception
+        if (one == null) {
+            throw new RuntimeException("Music not found with Id: " + musicToEdit.getMusicId());
+        }
+        return musicRepository.save(musicToEdit);
     }
 }
+

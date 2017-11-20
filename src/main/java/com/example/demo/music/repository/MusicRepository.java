@@ -7,10 +7,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface MusicRepository extends CrudRepository<Music,Integer> {
+public interface MusicRepository extends CrudRepository<Music, Integer> {
 
     /**
-     *
      * @return list of all music in the music table of the database
      */
     List<Music> findAll();

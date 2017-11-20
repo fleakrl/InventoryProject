@@ -25,7 +25,7 @@ public class MusicController {
      * @return List<MusicDto> of music in the music table
      */
     @RequestMapping(method = RequestMethod.GET, path = "/music")
-    public List<MusicDto> findAllMusic(){
+    public List<MusicDto> findAllMusic() {
         return musicDelegate.findAllMusic();
     }
 
@@ -37,7 +37,7 @@ public class MusicController {
      * @return Music DTO of Music added to the database
      */
     @RequestMapping(method = RequestMethod.POST, path = "/music")
-    public MusicDto addMusic(@RequestBody MusicDto musicToAdd){
+    public MusicDto addMusic(@RequestBody MusicDto musicToAdd) {
         return musicDelegate.addMusic(musicToAdd);
     }
 
@@ -48,8 +48,21 @@ public class MusicController {
      *
      * @param musicId integer id of the music record in the music table to be deleted
      */
-    @RequestMapping(method = RequestMethod.DELETE, path = "music/{musicId}")
-    public void deleteMusic(@PathVariable Integer musicId){
+    @RequestMapping(method = RequestMethod.DELETE, path = "/music/{musicId}")
+    public void deleteMusic(@PathVariable Integer musicId) {
         musicDelegate.deleteMusic(musicId);
+    }
+
+
+    /**
+     * On PUT Requests to /music edit an existing item in the music table;
+     * if musicId is not in the music table returns a runtime exception
+     *
+     * @param musicToEdit Music object with the edits in place
+     * @return MusicDto object of the object after the edits have been made.
+     */
+    @RequestMapping(method = RequestMethod.PUT, path = "/music")
+    public MusicDto editMusic(@RequestBody MusicDto musicToEdit) {
+        return musicDelegate.editMusic(musicToEdit);
     }
 }

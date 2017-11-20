@@ -36,7 +36,6 @@ public class BookDto {
     private String isbn;
 
     /**
-     *
      * Converts a Book object into a BookDto object
      *
      * @param book the book object to be transformed by this function
@@ -56,13 +55,12 @@ public class BookDto {
     }
 
     /**
-     *
      * Converts a BookDto object into a Book object
      *
      * @param bookDto the bookDto object to be transformed by this function
      * @return Book A book object constructed from the input bookDto
      */
-    public static Book convertBookDtoToBook(BookDto bookDto){
+    public static Book convertBookDtoToBook(BookDto bookDto) {
         return Book.builder()
                 .bookId(bookDto.getBookId())
                 .title(bookDto.getTitle())

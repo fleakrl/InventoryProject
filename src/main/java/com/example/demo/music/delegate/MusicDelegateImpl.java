@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class MusicDelegateImpl implements MusicDelegate{
+public class MusicDelegateImpl implements MusicDelegate {
 
     private final MusicService musicService;
 
@@ -33,5 +33,12 @@ public class MusicDelegateImpl implements MusicDelegate{
     @Override
     public void deleteMusic(Integer musicId) {
         musicService.deleteMusic(musicId);
+    }
+
+    @Override
+    public MusicDto editMusic(MusicDto musicToEdit) {
+        Music music = musicService.editMusic(MusicDto.convertDtoToMusic(musicToEdit));
+
+        return MusicDto.convertMusicToDto(music);
     }
 }

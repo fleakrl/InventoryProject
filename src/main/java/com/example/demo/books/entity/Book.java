@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false, of = {"isbn"})
-@Table(schema ="lc_portfolio_project", name = "books")
+@Table(schema = "lc_portfolio_project", name = "books")
 public class Book {
 
     @Id

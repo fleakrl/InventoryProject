@@ -36,8 +36,8 @@ public class BooksServiceImpl implements BooksService {
         Book one = bookRepository.findOne(bookToEdit.getBookId());
 
         //if not throw exception
-        if(one == null){
-            throw new RuntimeException("Book not found with ID: "+bookToEdit.getBookId());
+        if (one == null) {
+            throw new RuntimeException("Book not found with ID: " + bookToEdit.getBookId());
         }
 
         //if book id is in database save book updates

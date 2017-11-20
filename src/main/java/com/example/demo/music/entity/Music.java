@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(schema = "lc_portfolio_project",name = "music")
+@Table(schema = "lc_portfolio_project", name = "music")
 public class Music {
 
     @Id

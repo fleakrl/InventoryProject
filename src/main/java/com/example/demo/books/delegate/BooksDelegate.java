@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface BooksDelegate {
     /**
-     *
      * @return List of all books
      */
     List<BookDto> getAllBooks();

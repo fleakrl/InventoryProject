@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface MusicService {
     /**
-     *
      * @return list of all music in the music table of the database
      */
     List<Music> findAllMusic();
@@ -14,4 +13,6 @@ public interface MusicService {
     Music addMusic(Music musicToAdd);
 
     void deleteMusic(Integer musicId);
+
+    Music editMusic(Music musicToEdit);
 }

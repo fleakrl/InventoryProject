@@ -43,14 +43,12 @@ public class MusicDto {
 
 
     /**
-     *
      * Converts a MusicDto object into a Music object
-
      *
      * @param musicDto the musicDto object to be transformed by this function
      * @return Music A music object constructed from the input musicDto
      */
-    public static Music convertDtoToMusic(MusicDto musicDto){
+    public static Music convertDtoToMusic(MusicDto musicDto) {
         return Music.builder()
                 .musicId(musicDto.getMusicId())
                 .type(musicDto.getType())
@@ -65,13 +63,12 @@ public class MusicDto {
 
 
     /**
-     *
      * Converts a Music object into a MusicDto object
      *
      * @param music the music object to be transformed by this function
      * @return MusicDto a MusicDto object constructed from the input music object
      */
-    public static MusicDto convertMusicToDto(Music music){
+    public static MusicDto convertMusicToDto(Music music) {
         return MusicDto.builder()
                 .musicId(music.getMusicId())
                 .type(music.getType())

@@ -7,7 +7,6 @@ import java.util.List;
 public interface BooksService {
 
     /**
-     *
      * @return List of all Books in the database
      */
     List<Book> getAllBooks();

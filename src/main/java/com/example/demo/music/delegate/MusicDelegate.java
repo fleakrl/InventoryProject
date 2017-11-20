@@ -11,4 +11,6 @@ public interface MusicDelegate {
     MusicDto addMusic(MusicDto musicToAdd);
 
     void deleteMusic(Integer musicId);
+
+    MusicDto editMusic(MusicDto musicToEdit);
 }
