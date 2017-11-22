@@ -1,5 +1,6 @@
 package com.example.demo.movies.delegate;
 
+import com.example.demo.movies.entity.Movie;
 import com.example.demo.movies.moviesdto.MoviesDto;
 import com.example.demo.movies.service.MoviesService;
 import lombok.RequiredArgsConstructor;
@@ -21,5 +22,12 @@ public class MoviesDelegateImpl implements MoviesDelegate {
         return moviesService.getAllMovies().stream()
                 .map(MoviesDto::convertMovietoDto)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public MoviesDto addMovie(MoviesDto movieToAdd) {
+        Movie movie = MoviesDto.convertDtoToMovie(movieToAdd);
+
+        return MoviesDto.convertMovietoDto(moviesService.addMovie(movie));
     }
 }

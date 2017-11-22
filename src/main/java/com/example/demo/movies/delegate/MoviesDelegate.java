@@ -9,4 +9,6 @@ public interface MoviesDelegate {
 
     List<MoviesDto> findAllMovies();
 
+    MoviesDto addMovie(MoviesDto movieToAdd);
+
 }
