@@ -11,4 +11,6 @@ public interface MoviesDelegate {
 
     MoviesDto addMovie(MoviesDto movieToAdd);
 
+    MoviesDto updateMovie(MoviesDto movieToUpdate);
+
 }

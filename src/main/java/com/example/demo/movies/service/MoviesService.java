@@ -9,4 +9,6 @@ public interface MoviesService {
     List<Movie> getAllMovies();
 
     Movie addMovie(Movie movieToAdd);
+
+    Movie updateMovie(Movie movieToUpdate);
 }

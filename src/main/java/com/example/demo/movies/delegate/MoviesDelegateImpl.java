@@ -30,4 +30,9 @@ public class MoviesDelegateImpl implements MoviesDelegate {
 
         return MoviesDto.convertMovietoDto(moviesService.addMovie(movie));
     }
+
+    @Override
+    public MoviesDto updateMovie(MoviesDto movieToUpdate) {
+        return MoviesDto.convertMovietoDto(moviesService.updateMovie(MoviesDto.convertDtoToMovie(movieToUpdate)));
+    }
 }

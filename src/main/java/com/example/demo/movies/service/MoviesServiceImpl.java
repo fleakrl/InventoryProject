@@ -23,4 +23,17 @@ public class MoviesServiceImpl implements MoviesService {
     public Movie addMovie(Movie movieToAdd) {
         return movieRepository.save(movieToAdd);
     }
+
+    @Override
+    public Movie updateMovie(Movie movieToUpdate) {
+        //See if movie id is in movie table
+        Movie one = movieRepository.findOne(movieToUpdate.getMovieId());
+
+        //if id is not in table throw exception
+        if(one == null){
+            throw new RuntimeException("Movie not found with id: " + movieToUpdate.getMovieId());
+        }
+        //else save movieToUpdate
+        return movieRepository.save(movieToUpdate);
+    }
 }
