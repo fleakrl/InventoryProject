@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Handles requests to /books
  */
-@RestController("/books")
+@RestController
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class BookController {
 
@@ -23,7 +23,7 @@ public class BookController {
      *
      * @return Returns a list of all books in the database
      */
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(path = "/books", method = RequestMethod.GET)
     public List<BookDto> listBooks() {
 
         return booksDelegate.getAllBooks();
