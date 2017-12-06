@@ -35,7 +35,7 @@ public class BookController {
      * @param bookToAdd This is a BookDto object that is created from the JSON included in the request body.
      * @return BooDto of the book data added to the database
      */
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST, path ="/books")
     public BookDto addBook(@RequestBody BookDto bookToAdd) {
 
         return booksDelegate.addBook(bookToAdd);

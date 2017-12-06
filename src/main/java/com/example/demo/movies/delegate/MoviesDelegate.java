@@ -13,4 +13,6 @@ public interface MoviesDelegate {
 
     MoviesDto updateMovie(MoviesDto movieToUpdate);
 
+    void deleteMovie(Integer movieId);
+
 }

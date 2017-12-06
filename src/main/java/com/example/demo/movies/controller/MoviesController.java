@@ -4,10 +4,7 @@ import com.example.demo.movies.delegate.MoviesDelegate;
 import com.example.demo.movies.moviesdto.MoviesDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -43,6 +40,11 @@ public class MoviesController {
     @RequestMapping(method = RequestMethod.PUT, path = "/movies")
     public MoviesDto updateMovie(@RequestBody MoviesDto movieToUpdate){
        return moviesDelegate.updateMovie(movieToUpdate);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, path = "/movies/{movieId}")
+    public void deleteMovie(@PathVariable Integer movieId){
+        moviesDelegate.deleteMovie(movieId);
     }
 
 }

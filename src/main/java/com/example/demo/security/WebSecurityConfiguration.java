@@ -5,6 +5,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+
+/**
+ * Class required for spring security filter
+ */
+
 @EnableOAuth2Sso
 @Configuration
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {

@@ -36,4 +36,11 @@ public class MoviesServiceImpl implements MoviesService {
         //else save movieToUpdate
         return movieRepository.save(movieToUpdate);
     }
+
+
+    @Override
+    public void deleteMovie(Integer movieID) {
+        movieRepository.delete(movieID);
+
+    }
 }
