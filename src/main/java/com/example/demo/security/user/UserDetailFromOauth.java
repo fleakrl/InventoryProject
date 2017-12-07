@@ -3,9 +3,16 @@ package com.example.demo.security.user;
 import lombok.Builder;
 import lombok.Value;
 
+
+/**
+ * a user object created from the data returned from Oauth
+ *
+ * contains useful information about the currently logged in user
+ *
+ */
 @Value
 @Builder
-public class UserInfoFromOauth {
+public class UserDetailFromOauth {
 
     String userId;
     String email;

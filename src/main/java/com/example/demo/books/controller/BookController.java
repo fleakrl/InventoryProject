@@ -41,12 +41,22 @@ public class BookController {
         return booksDelegate.addBook(bookToAdd);
     }
 
+
+    /**
+     * On the DELETE request at /books/{bookId} delete the book from the database with the given bookId
+     * @param bookId the bookId of the book to be deleted from the database
+     */
     @RequestMapping(method = RequestMethod.DELETE, path = "/books/{bookId}")
     public void deleteBook(@PathVariable Integer bookId) {
 
         booksDelegate.deleteBook(bookId);
     }
 
+    /**
+     *
+     * @param bookToEdit BookDto object of the book
+     * @return BookDto of the book after edits have been made
+     */
     @RequestMapping(method = RequestMethod.PUT, path = "/books")
     public BookDto editBook(@RequestBody BookDto bookToEdit) {
 

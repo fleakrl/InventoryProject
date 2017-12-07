@@ -18,11 +18,17 @@ public class UserDetailExtractorImpl implements UserDetailExtractor{
         return SecurityContextHolder.getContext().getAuthentication();
     }
 
+
+    /**
+     *
+     * @return UserDetailFromOauth object from information returned by Oauth.
+     *
+     */
     @Override
-    public UserInfoFromOauth getUserInfo() {
+    public UserDetailFromOauth getUserInfo() {
         Map<String, String> userDetailsMap = getUserDetailsFromOauth();
 
-        return UserInfoFromOauth.builder()
+        return UserDetailFromOauth.builder()
                 .userId(userDetailsMap.get("id"))
                 .email(userDetailsMap.get("email"))
                 .name(userDetailsMap.get("name"))
